@@ -17,18 +17,28 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    padding: 0 1rem;
 }
 
 #nav-bar {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-bar-items {
+    cursor: pointer;
     font-size: 1rem;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
-    font-style: normal;
+}
 
-    width: 30vw;
-    display: flex;
-    justify-content: space-around;
+/* Hamburger Button */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 #name {
@@ -125,23 +135,23 @@ body {
     border-radius: 3vh 3vh 0vh 0vh;
 }
 
-.skill-heading{
+.skill-heading {
     padding: 1vh 0.5vh 1vh 0.5vh;
     line-height: 1.1;
     width: 100%;
-    height:30%; 
+    height: 30%;
     font-size: 1.4rem;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: bold;
     text-align: center;
-    color:red;
+    color: red;
 
 }
 
-.skill-text{
+.skill-text {
     width: 100%;
-    height:70%; 
+    height: 70%;
     margin-top: 3vh;
     font-size: 1.0rem;
     font-family: "Roboto", sans-serif;
@@ -151,18 +161,16 @@ body {
 
 }
 
-.skill-description{
-    
-}
+.skill-description {}
 
-#contact-me{
-    display:flex;
+#contact-me {
+    display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
 
 }
 
-#contact-heading{
+#contact-heading {
     font-size: 2rem;
     width: 50vw;
     font-family: "Poppins", sans-serif;
@@ -171,7 +179,7 @@ body {
     text-align: center;
 }
 
-#contact-flex{
+#contact-flex {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -179,18 +187,18 @@ body {
     height: 40vh;
 }
 
-.form-element{
+.form-element {
     width: 30vw;
-    height:4vh;
+    height: 4vh;
     border-radius: 1rem 1rem 1rem 1rem;
 }
 
-#enquiry{
+#enquiry {
     height: 10vh;
     border: 2px solde black;
 }
 
-#submit-button{
+#submit-button {
     width: 15vh;
     height: 4vh;
     border: 2px solid black;
@@ -203,7 +211,7 @@ body {
 
 }
 
-#about-title{
+#about-title {
     font-size: 2rem;
     width: 100%;
     font-family: "Poppins", sans-serif;
@@ -212,17 +220,163 @@ body {
     text-align: center;
     padding-top: 2vh;
 }
-#about-me{
+
+#about-me {
     display: flex;
 }
-#about-text{
+
+#about-me-box{
+    width:70%;background-color: blanchedalmond;height:100%;
+}
+
+#about-text {
     padding: 3vh 10vw 0vw 10vw;
 }
 
-#about-image{
+#about-image {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url('images/personal photo.png');
 }
 
+
+/* CSS MEDIA QUERIES 
+
+@media screen and (max-width: 500px){
+    #full-body{grid-template-rows: 5vh 60vh 250vh 70vh 70vh;}
+    #intro{padding-top:5vh; padding-bottom: 5vh;}
+    #intro-heading{font-size:2.5rem; width: 80vw}
+    #intro-description{font-size:1.3rem; width: 80vw};
+    #skills-heading{font-size: 2.5rem;}
+}
+
+*/
+
+@media screen and (max-width: 768px) {
+    #about-image {
+        display: none;
+    }
+
+    #full-body {
+        grid-template-rows: auto;
+    }
+
+    #nav-bar {
+        flex-direction: column;
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    #name {
+        font-size: 1.2rem;
+        width: auto;
+    }
+
+    #intro {
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+    }
+
+    #intro-heading {
+        font-size: 2.5rem;
+        width: 90%;
+    }
+
+    #intro-description {
+        font-size: 1rem;
+        width: 90%;
+    }
+
+    #skills-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #skills-heading {
+        font-size: 2.5rem;
+    }
+
+    .skill-box-items {
+        width: 80%;
+        margin: 2vh 0;
+    }
+
+    #contact-flex {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    #about-me-box{
+        width:100%;
+    }
+
+    .form-element {
+        width: 80%;
+    }
+
+    #submit-button {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #nav-bar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        background-color: white;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+
+    #nav-bar.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    #intro-heading {
+        font-size: 2.3rem;
+        padding: 0 2vw;
+    }
+
+    #skills-heading {
+        font-size: 2.3rem;
+    }
+
+    #contact-heading {
+        font-size: 2.3rem;
+    }
+
+
+
+    .skill-box-items,
+    #contact-flex,
+    .form-element {
+        width: 90%;
+    }
+
+    #about-me {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #about-text {
+        padding: 3vh 5vw;
+    }
+
+    #about-me:nth-child(1) {
+        width: 100%;
+    }
+
+    #contact-flex > div{
+        width:100%;
+    }
+}

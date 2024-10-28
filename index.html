@@ -27,12 +27,22 @@
     <div id="full-body">
         <div class="full-body-items" id="nav">
             <div id="name">Abhinav Rai</div>
+            <button class="hamburger" onclick="toggleNav()">☰</button> <!-- Hamburger icon for mobile -->
             <div id="nav-bar">
                 <div class="nav-bar-items">Home</div>
                 <div class="nav-bar-items">About</div>
+                <div class="nav-bar-items">Skills</div>
                 <div class="nav-bar-items">Contact</div>
             </div>
         </div>
+        
+        <script>
+            function toggleNav() {
+                var navBar = document.getElementById("nav-bar");
+                navBar.classList.toggle("show");
+            }
+        </script>
+        
         <div class="full-body-items" id="intro">
             <div class="dashed-line"></div>
             <div id="intro-heading">Hello, my name is <span style="font-style: italic; color:red;">Abhinav Rai</span>
@@ -76,7 +86,7 @@
                 </div>
             </div>
         </div>
-        <div class="full-body-items" id="about-me"><div style="width:70%;background-color: blanchedalmond;height:100%">
+        <div class="full-body-items" id="about-me"><div id="about-me-box">
             <div id="about-title">Who <span style="color: red;">am I?</span></div>
           <div id="about-text">I am Abhinav, a first year engineeringstudent at <b>IIT Guwahati.</b> I am also a web designer having a decent knowledge of technologies such as HTML, CSS and Javascript. Apart from that I also know languages such as Python and C++.
             <br> <br> <b>Projects:</b> Adding this soon! <br></div>  
